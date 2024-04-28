@@ -38,12 +38,11 @@ fn get_temperature() -> f64 {
         .read_line(&mut temperature)
         .expect("Failed to read line");
 
-    let temperature: f64 = match temperature.trim().parse() {
+    match temperature.trim().parse() {
         Ok(num) => num,
         Err(_) => {
             println!("{} is not a number. Please try again", temperature.trim());
             get_temperature()
         }
-    };
-    temperature
+    }
 }
