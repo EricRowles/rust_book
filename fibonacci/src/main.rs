@@ -14,15 +14,9 @@ fn print_menu() {
 
     let mut prev = 1;
     let mut curr = 1;
-    println!(
-        "Enter the first number in the sequence (default {}): ",
-        prev
-    );
+    println!("Enter the first number in the sequence (default {prev}): ");
     prev = get_number(prev);
-    println!(
-        "Enter the second number in the sequence (default {}): ",
-        curr
-    );
+    println!("Enter the second number in the sequence (default {curr}): ");
     curr = get_number(curr);
     println!("Starting numbers are {prev} and {curr}");
     println!("Enter which number you want to calculate (default 3): ");
