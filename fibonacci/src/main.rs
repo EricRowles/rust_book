@@ -25,7 +25,7 @@ fn print_menu() {
         println!("There's no index 0 in the Fibonacci sequence...");
         return;
     }
-    let fib = get_fibonacci(&mut prev, &mut curr, n);
+    let fib = get_fibonacci(prev, curr, n);
     println!("Fibonacci number at index {n} is {fib}")
 }
 
@@ -52,18 +52,18 @@ fn get_number(default: u64) -> u64 {
     }
 }
 
-fn get_fibonacci(prev: &mut u64, curr: &mut u64, n: u64) -> u64 {
+fn get_fibonacci(mut prev: u64, mut curr: u64, n: u64) -> u64 {
     if n == 0 {
         return 0;
     } else if n == 1 {
-        return *prev;
+        return prev;
     } else if n == 2 {
-        return *curr;
+        return curr;
     };
 
     for _ in 2..n {
-        (*prev, *curr) = (*curr, *prev + *curr);
-        // println!("{}", *curr);
+        (prev, curr) = (curr, prev + curr);
+        // println!("{}", curr);
     }
-    *curr
+    curr
 }
